@@ -1,16 +1,75 @@
 package danran.rpc.config;
 
+import danran.rpc.client.ClientProxyFactory;
+import danran.rpc.client.discovery.ZkDiscovery;
+import danran.rpc.client.net.NettyNetClient;
+import danran.rpc.common.protocol.JavaSerializeMessageProtocol;
+import danran.rpc.common.protocol.MessageProtocol;
+import danran.rpc.properties.RpcProperties;
+import danran.rpc.server.NettyRpcServer;
+import danran.rpc.server.RequestHandler;
+import danran.rpc.server.RpcServer;
+import danran.rpc.server.register.DefaultRpcProcessor;
+import danran.rpc.server.register.ServiceRegister;
+import danran.rpc.server.register.ZookeeperExportServiceRegister;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Classname AutoConfiguration
  * @Description TODO
  * @Date 2021/8/23 19:47
  * @Created by ASUS
- *
+ * <p>
  * Spring boot 自动配置类
  */
 @Configuration
 public class AutoConfiguration {
 
+    @Bean
+    public DefaultRpcProcessor defaultRpcProcessor() {
+        return new DefaultRpcProcessor();
+    }
+
+    @Bean
+    public RpcProperties rpcProperties() {
+        return new RpcProperties();
+    }
+
+    @Bean
+    public ClientProxyFactory clientProxyFactory(@Autowired RpcProperties rpcProperties) {
+        ClientProxyFactory clientProxyFactory = new ClientProxyFactory();
+        // 设置服务发现者
+        clientProxyFactory.setServiceDiscovery(new ZkDiscovery(rpcProperties.getRegisterAddress()));
+        // 设置支持的协议
+        Map<String, MessageProtocol> supportedProtocols = new HashMap<>();
+        supportedProtocols.put(rpcProperties.getProtocol(), new JavaSerializeMessageProtocol());
+        clientProxyFactory.setSupportMessageProtocols(supportedProtocols);
+        // 设置网络层的实现
+        clientProxyFactory.setNetClient(new NettyNetClient());
+        return clientProxyFactory;
+    }
+
+    @Bean
+    public ServiceRegister serviceRegister(@Autowired RpcProperties rpcProperties) {
+        return new ZookeeperExportServiceRegister(
+                rpcProperties.getRegisterAddress(),
+                rpcProperties.getServerPort(),
+                rpcProperties.getProtocol()
+        );
+    }
+
+    @Bean
+    public RequestHandler requestHandler(@Autowired ServiceRegister serviceRegister) {
+        return new RequestHandler(new JavaSerializeMessageProtocol(), serviceRegister);
+    }
+
+    @Bean
+    public RpcServer rpcServer(@Autowired RequestHandler handler, @Autowired RpcProperties rpcProperties) {
+        return new NettyRpcServer(rpcProperties.getServerPort(), rpcProperties.getProtocol(), handler);
+    }
 }
