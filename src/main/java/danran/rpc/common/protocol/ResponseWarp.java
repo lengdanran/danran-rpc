@@ -21,6 +21,10 @@ public class ResponseWarp implements Serializable {
 
     private Exception exception;
 
+    public ResponseWarp(Status status) {
+        this.status = status;
+    }
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
