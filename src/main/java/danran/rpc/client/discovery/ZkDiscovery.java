@@ -44,13 +44,21 @@ public class ZkDiscovery implements ServiceDiscovery {
     @Override
     public List<Service> getServices(String name) {
         String servicePath = ZkServerHostPath + "/" + name + "/service";
-        logger.info("servicePath = " + servicePath);
-        List<String> children = zkClient.getChildren(servicePath);
-        return Optional.ofNullable(children).orElse(new ArrayList<>()).stream().map(str -> {
+        logger.info("寻找服务提供者: " + servicePath);
+        // 获得服务具体的实现者，子节点的名称为具体服务的JSON序列化字符串
+        List<String> serviceInstances = null;
+        try {
+            serviceInstances = zkClient.getChildren(servicePath);
+        } catch (RuntimeException e) {
+            logger.error("服务发现出错");
+            e.printStackTrace();
+        }
+//        List<String> children = zkClient.getChildren(servicePath);
+        return Optional.ofNullable(serviceInstances).orElse(new ArrayList<>()).stream().map(str -> {
             String deCh = null;
             try {
-                logger.info(str);
                 deCh = URLDecoder.decode(str, "UTF-8");
+                logger.info("发现服务提供者: {}", deCh);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }

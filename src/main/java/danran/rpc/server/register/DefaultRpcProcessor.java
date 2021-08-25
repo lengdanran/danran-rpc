@@ -47,34 +47,41 @@ public class DefaultRpcProcessor implements ApplicationListener<ContextRefreshed
         }
     }
 
+    /**
+     * RPC 服务启动方法
+     * @param context Application context
+     */
     private void startRpcServer(ApplicationContext context) {
+        // 获得添加了RPCService注解的bean
         Map<String, Object> beans = context.getBeansWithAnnotation(RPCService.class);
         // 当有需要注册的服务时，进行注册
         if (beans.size() != 0) {
             boolean startedFlag = true;
             // 遍历map中的所有需要暴露的服务
-            for (Object obj : beans.values()) {
+            for (Object obj : beans.values()) {// obj为实际服务对象
                 try {
-                    Class<?> clazz = obj.getClass();
+                    Class<?> clazz = obj.getClass();// 获取当前obj的Class
                     Class<?>[] interfaces = clazz.getInterfaces();// 获得该类实现的接口列表
-                    ServiceObject serviceObject;
-                    if (interfaces.length != 1) {
+                    ServiceObject serviceObject;// 用于封装具体的服务对象
+                    /*通过接口解耦合，提高扩展性*/
+                    if (interfaces.length != 1) {// 通过注解来获取到当前服务对象的全类名
                         RPCService rpcService = clazz.getAnnotation(RPCService.class);
-                        String serviceName = rpcService.value();
+                        String serviceName = rpcService.value();// 获取该服务对象的全类名
                         if ("".equals(serviceName)) {
                             startedFlag = false;
                             throw new UnsupportedOperationException("The exposed interface is not specific with '" + obj.getClass().getName() + "'");
                         }
-                        serviceObject = new ServiceObject(serviceName, Class.forName(serviceName), obj);
+                        serviceObject = new ServiceObject(serviceName, Class.forName(serviceName), obj);// 创建服务对象封装类实例对象
                     } else {
-                        Class<?> superClass = interfaces[0];
+                        Class<?> superClass = interfaces[0];// 获取父类Class(接口Class)
                         serviceObject = new ServiceObject(superClass.getName(), superClass, obj);
                     }
-                    serviceRegister.register(serviceObject);
+                    serviceRegister.register(serviceObject);// 调用注册服务--->注册该服务封装类对象
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
+            // 启动具体的RPC服务
             if (startedFlag) rpcServer.start();
         }
     }

@@ -20,12 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * <p>
+ *  Spring boot 自动配置类
+ *
  * @Classname AutoConfiguration
  * @Description TODO
  * @Date 2021/8/23 19:47
  * @Created by ASUS
- * <p>
- * Spring boot 自动配置类
+ *
  */
 @Configuration
 public class AutoConfiguration {

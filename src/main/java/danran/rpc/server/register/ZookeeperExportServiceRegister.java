@@ -40,12 +40,12 @@ public class ZookeeperExportServiceRegister extends DefaultServiceRegister imple
      */
     @Override
     public void register(ServiceObject serviceObject) throws Exception {
-        super.register(serviceObject);
+        super.register(serviceObject);// 父类注册
         Service service = new Service();
 
-        String host = InetAddress.getLocalHost().getHostAddress();
+        String host = InetAddress.getLocalHost().getHostAddress();// 获得本机的host地址ip
         String address = host + ":" + port;
-        logger.info("服务：" + serviceObject.getName() + "=>源地址：" + address);
+        logger.info("服务：" + serviceObject.getName() + "=>在源地址：" + address + " 提供服务");
 
         service.setAddress(address);
         service.setName(serviceObject.getClazz().getName());
@@ -67,16 +67,18 @@ public class ZookeeperExportServiceRegister extends DefaultServiceRegister imple
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+        // 抽象的服务定位节点
         String servicePath = "/rpc/" + serviceName + "/service";
-        logger.info("servicePath == " + servicePath);
+        logger.info("抽象服务[" + serviceName + "]注册地址 == " + servicePath);
 
         if (!zkClient.exists(servicePath)) {
             zkClient.createPersistent(servicePath, true);
         }
+        // 具体的服务实例地址
         String uriPath = servicePath + "/" + uri;
-        logger.info("uriPath == " + uriPath);
+        logger.info("具体服务实例注册节点 == " + uriPath);
 
-        if (zkClient.exists(uriPath)) zkClient.delete(uriPath);
+        if (zkClient.exists(uriPath)) zkClient.delete(uriPath);// 如果存在，删除更新
         zkClient.createEphemeral(uriPath);// 创建一个短暂的节点
     }
 
