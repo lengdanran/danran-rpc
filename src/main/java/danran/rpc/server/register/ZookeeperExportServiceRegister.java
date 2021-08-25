@@ -48,7 +48,7 @@ public class ZookeeperExportServiceRegister extends DefaultServiceRegister imple
         logger.info("服务：" + serviceObject.getName() + "=>源地址：" + address);
 
         service.setAddress(address);
-        service.setName(serviceObject.getClass().getName());
+        service.setName(serviceObject.getClazz().getName());
         service.setProtocol(protocol);
         // 暴露服务
         this.exportService(service);
@@ -76,7 +76,7 @@ public class ZookeeperExportServiceRegister extends DefaultServiceRegister imple
         String uriPath = servicePath + "/" + uri;
         logger.info("uriPath == " + uriPath);
 
-        if (!zkClient.exists(uriPath)) zkClient.delete(uriPath);
+        if (zkClient.exists(uriPath)) zkClient.delete(uriPath);
         zkClient.createEphemeral(uriPath);// 创建一个短暂的节点
     }
 

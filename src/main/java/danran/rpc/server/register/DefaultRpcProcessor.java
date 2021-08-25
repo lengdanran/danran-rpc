@@ -9,7 +9,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 
 import javax.annotation.Resource;
-import java.io.File;
 import java.lang.reflect.Field;
 import java.util.Map;
 import java.util.Objects;
@@ -41,8 +40,11 @@ public class DefaultRpcProcessor implements ApplicationListener<ContextRefreshed
      */
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-
-
+        if (Objects.isNull(event.getApplicationContext().getParent())) {
+            ApplicationContext context = event.getApplicationContext();
+            this.startRpcServer(context);
+            this.injectService(context);
+        }
     }
 
     private void startRpcServer(ApplicationContext context) {

@@ -3,7 +3,10 @@ package danran.rpc.client.net;
 import danran.rpc.client.net.handler.SendHandler;
 import danran.rpc.common.service.Service;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.*;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
+import io.netty.channel.ChannelPipeline;
+import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -58,7 +61,6 @@ public class NettyNetClient implements NetClient {
             // 释放线程组资源
             group.shutdownGracefully();
         }
-
-        return new byte[0];
+        return rsp;
     }
 }
