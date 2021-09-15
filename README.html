@@ -1,0 +1,1541 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>README</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+
+/* CodeMirror Dracula theme */
+:root {
+  --bg-color: #fbfbfb;
+  --text-color: #333;
+  --md-char-color: #b4b4b4;
+  --meta-content-color: #757575;
+  --table-border-color: #b4b4b4;
+  --select-text-bg-color: #fbb6b7;
+  --primary-color: #db4d52;
+  --primary-btn-border-color: #be2f34;
+  --primary-btn-text-color: #333;
+  --window-border: 1px solid #16161a;
+  --active-file-bg-color: #16161a;
+  --active-file-text-color: inherit;
+  --active-file-border-color: #757575;
+  --active-search-item-bg-color: #23242b;
+  --side-bar-bg-color: #2e3235;
+  --item-hover-bg-color: #ececec;
+  --item-hover-text-color: inherit;
+  --search-select-text-color: #333;
+  --search-select-bg-color: #db4d5270;
+  --rawblock-edit-panel-bd: #ddd;
+  --monospace: 'Fira Mono', 'Cousine', 'Consolas', monospace;
+  --node-fill: #fbfbfb;
+  --node-border: #0000001a;
+}
+
+html, body {
+  font-family: 'PingFang SC', 'Lato', sans-serif;
+  font-weight: black;
+}
+
+body {
+  font-size: 1.0em;
+  line-height: 1.875rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PingFang SC', 'Times New Roman', serif;
+  font-weight: bolder;
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  cursor: text;
+}
+
+
+h1 {
+    text-align: center;
+    padding-bottom: 0.3em;
+    font-size: 2.2em;
+    line-height: 1.2;
+    margin: 1.5em auto 1.2em;
+    color: var(--main-10);
+}
+
+h1:after {
+    content: '';
+    display: block;
+    margin: 1.5em auto 0;
+    width: 100px;
+    height: 2px;
+    border-bottom: 2px solid var(--main-6);
+}
+
+h2 {
+    margin: 1.3em auto 1.4em;
+    /* padding-left: 10px; */
+    /* display:inline-block; */
+    line-height: 1.4;
+    font-size: 1.8em;
+    /* border-left: 9px solid var(--main-6); */
+    /* border-bottom: 1px solid #ddd; */
+    border-bottom: 1px solid var(--main-6);
+}
+
+h2::before {
+    content: '# '!important;
+    color: #f22f27;
+}
+
+h3 {
+    font-size: 1.4em;
+    line-height: 1.43;
+    margin: 1.2em auto 1.2em;
+    padding-left: 9px;
+    border-left: 5px solid #f22f27;
+}
+
+p {
+  margin: 1.5rem 0;
+  font-weight: bolder;
+}
+
+a {
+  color: #db4d52;
+  font-weight: bolder;
+}
+
+del {
+  color: #b4b4b4;
+  font-weight: bolder;
+}
+
+mark {
+  padding: 0 2px 2px;
+  background: #c7f661d3;
+  color: inherit;
+}
+
+blockquote {
+  position: relative;
+  margin: 1rem 0 1rem 2rem;
+  font-family: 'PingFang SC', 'Times New Roman', serif;
+  color: #827676;
+}
+
+blockquote::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  height: 100%;
+  width: .25rem;
+  background: #db4d52;
+}
+
+code,
+.md-fences,
+tt {
+  font-family: 'Monaco', 'Cousine', 'Consolas', monospace;
+  font-size: 1rem;
+}
+
+code {
+  font-size: .9em;
+  border: 1px solid #0000001a;
+  border-radius: .5rem;
+  padding: 1px .25rem;
+  background: #fafafa;
+}
+
+kbd {
+  font-family: 'Monaco', 'Cousine', 'Consolas', monospace;
+  font-size: .875rem;
+  border: 2px solid #0000001a;
+  background: #f7f7f7;
+  color: #333;
+  box-shadow: none;
+}
+
+hr {
+  border-color: #b4b4b4;
+}
+
+table {
+  border: 1px solid #b4b4b4;
+  margin: 1rem 0;
+}
+
+table tr:nth-child(2n) {
+  background: #ddd;
+}
+
+thead {
+  background: #ddd;
+}
+
+td, th {
+  padding: .35rem .7rem;
+  border: 1px solid #b4b4b4;
+}
+
+#write {
+  position: static;
+  width: 90%;
+  max-width: 700px;
+  line-height: 1.6;
+  transform: none;
+}
+
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre {
+  width: auto;
+}
+
+#write h1::before, #write h2::before, #write h3::before, #write h4::before, #write h5::before, #write h6::before {
+  position: absolute;
+  left: auto;
+  right: calc(100% + .75em);
+  top: 0;
+  color: #b4b4b4;
+  font-size: 1rem;
+  font-weight: bold;
+  font-variant: 'small-caps';
+}
+
+#write h1 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+#write h1::before {
+  content: 'H1';
+  top: .87rem;
+}
+
+#write h2 {
+  font-size: 1.8rem;
+  margin: .7rem 0;
+}
+
+#write h2::before {
+  content: 'H2';
+  top: .43rem;
+}
+
+#write h3 {
+  font-size: 1.6rem;
+  margin: .5rem 0;
+}
+
+#write h3::before {
+  content: 'H3';
+  top: .2rem;
+}
+
+#write h4 {
+  font-size: 1.4rem;
+  margin: .2rem 0;
+}
+
+#write h4::before {
+  content: 'H4';
+  top: .07rem;
+}
+
+#write h5, #write h6 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+#write h5::before {
+  content: 'H5';
+}
+
+#write h6::before {
+  content: 'H6';
+}
+
+#write > h1.md-focus::before,
+#write > h2.md-focus::before,
+#write > h3.md-focus::before,
+#write > h4.md-focus::before,
+#write > h5.md-focus::before,
+#write > h6.md-focus::before {
+  color: #757575;
+  padding: 0;
+  border: 0;
+  line-height: inherit;
+}
+
+#write ol, #write ul {
+  padding-left: 2rem;
+  margin: .5rem 0;
+}
+
+#write ol > li, #write ul > li {
+  color: #db4d52;
+  font-weight: bold;
+}
+
+#write ol > li > *, #write ul > li > * {
+  color: #333;
+  font-weight: normal;
+}
+
+#write ol > li > *:not(ol):not(ul), #write ul > li > *:not(ol):not(ul) {
+  padding-left: .25rem;
+}
+
+#write ul {
+  list-style-type: disc;
+}
+
+#write .md-task-list-item > input {
+  -webkit-appearance: initial;
+  display: block;
+  position: absolute;
+  border: 1px solid #b4b4b4;
+  border-radius: .25rem;
+  margin-top: .1rem;
+  margin-left: -1.8rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  transition: background 0.3s;
+}
+
+#write .md-task-list-item > input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#write .md-task-list-item > input:hover {
+  background: #ddd;
+}
+
+#write .md-task-list-item > input[checked]::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 60%;
+  width: 2px;
+  transform: rotate(40deg);
+  background: #333;
+}
+
+#write .md-task-list-item > input[checked]::after {
+  content: '';
+  position: absolute;
+  top: 46%;
+  left: 25%;
+  height: 30%;
+  width: 2px;
+  transform: rotate(-40deg);
+  background: #333;
+}
+
+#write .md-task-list-item > p {
+  transition: color 0.3s, opacity 0.3s;
+}
+
+#write .md-task-list-item.task-list-done > p {
+  color: #b4b4b4;
+  text-decoration: line-through;
+}
+
+#write .md-task-list-item.task-list-done > p > .md-emoji {
+  opacity: .5;
+}
+
+#write .md-task-list-item.task-list-done > p > .md-link > a {
+  opacity: .6;
+}
+
+#write .md-meta-block {
+  background-color: transparent;
+  border-bottom: 1px solid #b4b4b4;
+  padding-bottom: 1rem;
+  opacity: .8;
+}
+
+#write .md-table-edit {
+  border-top: 1px solid #b4b4b4;
+  margin-top: -29px !important;
+  padding: 3px 0;
+}
+
+#write .md-grid-board a.md-active, #write .md-grid-board a:hover {
+  background: #db4d52;
+  color: #b4b4b4;
+}
+
+#write .md-grid-board tr[row='1'] a.md-active, #write .md-grid-board tr[row='1'] a:hover {
+  background: #be2f34;
+  color: #b4b4b4;
+}
+
+#write .btn-group .btn + .btn {
+  margin-left: 0;
+}
+
+#write .btn-default.active, #write .btn-default.focus, #write .btn-default:active, #write .btn-default:focus, #write .btn-default:hover,
+.open > #write .btn-default.dropdown-toggle {
+  background: transparent;
+  color: inherit;
+}
+
+#write .typora-table-drag-area::after {
+  content: '';
+  position: absolute;
+  border: 2px solid #333;
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+#typora-table-row-tracker #write .typora-table-drag-area::after,
+#typora-table-col-tracker #write .typora-table-drag-area::after {
+  opacity: 1;
+}
+
+#typora-table-row-tracker #write .typora-table-drag-area::after {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+}
+
+#typora-table-col-tracker #write .typora-table-drag-area::after {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 0;
+}
+
+#write .md-toc-tooltip {
+  z-index: 10;
+}
+
+#write .md-toc-item {
+  font-size: 1.1rem;
+  color: var(--primary-btn-border-color);
+}
+
+#write .md-toc-h1 {
+  font-family: 'Adelle Cyrillic', 'Times New Roman', serif;
+  font-size: 1.3rem;
+}
+
+#write .md-toc-h2 {
+  font-size: 1.2rem;
+}
+
+#write .md-footnote {
+  font-family: 'Adelle Cyrillic', 'Times New Roman', serif;
+  font-size: .8em;
+  border: 1px solid #ddd;
+  padding: 0 4px;
+  background: #f0f0f0;
+  color: #333;
+}
+
+#write .md-def-split {
+  min-width: 1ch;
+}
+
+#write .md-def-name::before, #write .md-def-name::after {
+  color: #757575;
+}
+
+#write .md-image > .md-meta {
+  color: #757575;
+}
+
+#write .md-rawblock-tooltip {
+  top: -1.5rem;
+  height: 1.5rem;
+  padding: .25rem;
+}
+
+#write .md-search-hit {
+  background: #db4d5230;
+  border-radius: .125rem;
+}
+
+#write .md-search-select {
+  background: #db4d5270;
+  border: 1px solid #9292928f;
+  padding: 0 1px;
+}
+
+#write pre[lang="mermaid"] .md-diagram-panel {
+  border-color: #0000001a;
+}
+
+#write pre[lang="mermaid"] tspan {
+  fill: #333;
+}
+
+#write pre[lang="mermaid"][mermaid-type="graph"] path.path ~ defs marker {
+  fill: #333;
+}
+
+#write pre[lang="mermaid"][mermaid-type="graph"] .cluster rect {
+  fill: transparent !important;
+  stroke: #0000001a !important;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section1 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section2 {
+  fill: #ddd;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section3 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section4 {
+  fill: #ddd;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section5 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section6 {
+  fill: #ddd;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section7 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section8 {
+  fill: #ddd;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section9 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section10 {
+  fill: #ddd;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section11 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section12 {
+  fill: #ddd;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section13 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section14 {
+  fill: #ddd;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section15 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section16 {
+  fill: #ddd;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section17 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section18 {
+  fill: #ddd;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section19 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .task {
+  fill: #bfbee2;
+  stroke: #9d9bce;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .task[class*="done"] {
+  fill: #d5d5d5;
+  stroke: #929292;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .task[class*="active"] {
+  fill: #bcc0ff;
+  stroke: #7f7ccd;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .task[class*="crit"] {
+  fill: #ebb5bd;
+  stroke: #d45c62;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .task[class*="Crit"] {
+  stroke: #d45c62;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] text {
+  fill: #333;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] text[class*="activeText"], #write pre[lang="mermaid"][mermaid-type="gantt"] text[class*="activeCritText"] {
+  fill: #333 !important;
+  font-weight: bold;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] text[class*="doneText"], #write pre[lang="mermaid"][mermaid-type="gantt"] text[class*="doneCritText"] {
+  fill: #b4b4b4 !important;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .grid .tick line {
+  stroke: #333;
+}
+
+.modal-content .modal-header, .modal-content .modal-footer {
+  border-color: #b4b4b4;
+}
+
+.modal-content input, .modal-content button.btn-default {
+  border-color: #b4b4b4;
+}
+
+.modal-content input {
+  background: transparent;
+}
+
+#typora-quick-open {
+  top: 32px;
+  width: 40%;
+  min-width: 420px;
+  transform: translateX(-50%);
+  margin-left: 0;
+}
+
+.mac-seamless-mode #typora-quick-open {
+  top: 50px;
+}
+
+#typora-quick-open #typora-quick-open-input input {
+  border-color: #db4d52;
+}
+
+#typora-quick-open .ty-quick-open-category-list-inner {
+  position: relative;
+}
+
+#typora-quick-open .ty-quick-open-category-title {
+  height: auto;
+  padding-top: 4px;
+  padding-left: 12px;
+}
+
+#typora-quick-open .typora-quick-open-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+
+#typora-quick-open .typora-quick-open-item:not(.active):hover {
+  background: #23242b;
+}
+
+#typora-quick-open .typora-quick-open-item.active:before {
+  content: '⟩';
+  position: absolute;
+  left: 8px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+#typora-quick-open .typora-quick-open-item-path {
+  margin-top: -2px;
+}
+
+#toc-dropmenu {
+  padding: .25em 0;
+  background: #fbfbfb;
+}
+
+#toc-dropmenu .outline-title-divider {
+  display: none;
+}
+
+.outline-label:hover {
+  text-decoration: none;
+}
+
+.ty-tooltip {
+  background: #fbfbfb;
+  color: #333;
+  border-color: #00000040;
+}
+
+.code-tooltip.md-f-tooltip, .code-tooltip.md-f-tooltip .md-arrow::after {
+  background: #222 !important;
+  color: #f0f0f0 !important;
+}
+
+.code-tooltip.md-f-tooltip a {
+  color: #db4d52;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container), .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) *, .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) ol, .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) ul {
+  color: #b4b4b4 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) img, .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) .md-footnote, .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) .md-emoji {
+  opacity: .5;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) mark {
+  background: #ddd;
+}
+
+.on-focus-mode blockquote .md-end-block:not(.md-focus):not(.md-focus-container)::before {
+  opacity: .5;
+}
+
+.on-focus-mode li:not(.md-focus-container)::before {
+  opacity: .5;
+}
+
+#typora-sidebar {
+  border-right: 1px solid #19191c;
+}
+
+#typora-sidebar .sidebar-tabs {
+  font-family: 'Adelle Cyrillic', 'Times New Roman', serif;
+  border-bottom: 1px solid #19191c;
+}
+
+#typora-sidebar .file-list-item-file-name {
+  font-family: 'Adelle Cyrillic', 'Times New Roman', serif;
+  font-size: 1.2em;
+}
+
+#typora-sidebar #file-library-search-input {
+  background: #2e3235;
+}
+
+#typora-sidebar #file-library-search .file-list-item-file-name {
+  font-size: 1.1rem;
+}
+
+#typora-sidebar #file-library-search .ty-search-item.active {
+  background: #23242b;
+}
+
+#typora-sidebar .file-list-item-summary,
+#typora-sidebar .ty-search-item-line {
+  font-family: 'Avenir Next Cyr', 'Lato', sans-serif;
+}
+
+#typora-sidebar .ty-file-search-match-text,
+#typora-sidebar .ty-outline-hit {
+  font-weight: bold;
+  background: transparent;
+}
+
+#typora-sidebar #outline-content {
+  line-height: 1.4em;
+}
+
+#typora-sidebar #outline-content .outline-h1 > .outline-item {
+  font-family: 'Adelle Cyrillic', 'Times New Roman', serif;
+}
+
+#typora-sidebar #outline-content .outline-h1 > .outline-item {
+  padding-left: 0em;
+}
+
+#typora-sidebar #outline-content .outline-h2 > .outline-item {
+  padding-left: 0.75em;
+}
+
+#typora-sidebar #outline-content .outline-h3 > .outline-item {
+  padding-left: 1.5em;
+}
+
+#typora-sidebar #outline-content .outline-h4 > .outline-item {
+  padding-left: 2.25em;
+}
+
+#typora-sidebar #outline-content .outline-h5 > .outline-item {
+  padding-left: 3em;
+}
+
+#typora-sidebar #outline-content .outline-h6 > .outline-item {
+  padding-left: 3.75em;
+}
+
+#typora-sidebar #outline-content .outline-item:hover {
+  background: #202020;
+}
+
+#typora-sidebar .outline-title-wrapper,
+#typora-sidebar .outline-item-wrapper.outline-h1 > .outline-item {
+  font-family: 'Adelle Cyrillic', 'Times New Roman', serif;
+}
+
+#typora-sidebar .file-library-node,
+#typora-sidebar .file-library-node .file-node-background {
+  transition: background .4s;
+}
+
+#typora-sidebar .file-tree-node {
+  padding-left: .75em;
+}
+
+#typora-sidebar .file-tree-node i, #typora-sidebar .file-tree-node span {
+  vertical-align: middle;
+}
+
+#typora-sidebar .file-tree-node .file-node-icon, #typora-sidebar .file-tree-node .file-node-title {
+  margin-left: 2px;
+}
+
+#typora-sidebar .file-tree-node .file-tree-node:not(.file-library-file-node) > .file-node-content {
+  font-style: italic;
+}
+
+#typora-sidebar .file-tree-node.file-node-root > .file-node-content {
+  font-weight: bold;
+  font-style: italic;
+}
+
+#typora-sidebar .file-tree-node.file-library-file-node:not(.active):hover .file-node-background,
+#typora-sidebar .file-list-item.file-library-node:not(.active):hover {
+  background: #202020;
+}
+
+#typora-sidebar .file-tree-node.file-library-file-node.active .file-node-background,
+#typora-sidebar .file-list-item.file-library-file-node.active {
+  border-left: 5px solid #db4d52;
+}
+
+#typora-sidebar .blink-area {
+  animation: none;
+}
+
+#typora-sidebar #ty-sidebar-footer {
+  border-top: 1px solid #19191c;
+}
+
+#typora-sidebar #ty-sidebar-footer .sidebar-footer-item {
+  transition: background .3s;
+}
+
+#typora-sidebar #ty-sidebar-footer .sidebar-footer-item:hover {
+  background: #202020;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .menuitem-group-label {
+  font-style: italic;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .show + .menuitem-group-label.show {
+  border-color: #202020;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu li > a:hover {
+  background: #202020;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .ty-side-sort-btn {
+  cursor: pointer;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .ty-side-sort-btn.active, #typora-sidebar #ty-sidebar-footer #sidebar-files-menu .ty-side-sort-btn:hover {
+  color: #db4d52;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .ty-side-sort-btn.active {
+  background: #16161a;
+}
+
+.dropdown-menu:not(.megamenu-menu-list):not(#sidebar-files-menu) {
+  background: #fbfbfb;
+  color: #333;
+}
+
+.dropdown-menu:not(.megamenu-menu-list):not(#sidebar-files-menu) .divider {
+  border-color: #e6e6e6;
+}
+
+.dropdown-menu:not(.megamenu-menu-list):not(#sidebar-files-menu) .active a,
+.dropdown-menu:not(.megamenu-menu-list):not(#sidebar-files-menu) .has-extra-menu.active a {
+  background: #e6e6e6 !important;
+}
+
+.dropdown-menu:not(.megamenu-menu-list):not(#sidebar-files-menu) .has-btn-submenu .menu-style-btn.active {
+  background: #333;
+  color: #fbfbfb;
+  cursor: pointer;
+}
+
+#footer-word-count-info .ty-footer-word-count-all tr:hover,
+#ty-spell-check-dict-missing-menu li:hover {
+  background: #e6e6e6 !important;
+}
+
+.ty-spell-check-panel-item.ty-active, .ty-spell-check-panel-item:hover {
+  background: #e6e6e6 !important;
+}
+
+.btn-default:hover {
+  background: #ddd;
+}
+
+footer.ty-footer {
+  border-top: 0;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+  background: #fbfbfb;
+}
+
+.footer-item:hover {
+  background: #e6e6e6 !important;
+}
+
+#outline-btn:hover {
+  color: inherit;
+}
+
+.form-control:focus {
+  border-color: #db4d52;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px #db4d52;
+}
+
+.megamenu-opened header {
+  background-image: none;
+}
+
+#top-titlebar, #top-titlebar * {
+  color: inherit;
+}
+
+#megamenu-content {
+  padding-top: 28px;
+  background: #fbfbfb;
+  color: #333;
+}
+
+#megamenu-content .long-btn {
+  border-color: #9292928f;
+  transition: border-color .4s;
+}
+
+#megamenu-content .long-btn:hover {
+  border-color: #db4d52;
+  background: #eee;
+  color: inherit !important;
+}
+
+#megamenu-menu-panel:not(:first-of-type) {
+  margin-top: 48px;
+}
+
+#recent-file-panel-action-btn {
+  background: inherit;
+  border-color: #9292928f;
+  transition: all .4s;
+}
+
+#recent-file-panel-action-btn:hover {
+  border-color: #db4d52;
+  background: #eee;
+  color: inherit;
+}
+
+#recent-document-table {
+  background-color: inherit;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+  background-color: inherit;
+}
+
+#recent-file-panel tbody tr:hover {
+  background-color: #eee !important;
+}
+
+#recent-file-panel tbody tr:hover td:nth-child(1) {
+  color: inherit;
+}
+
+#megamenu-menu-sidebar {
+  background-color: #2e3235;
+  color: #333;
+}
+
+.megamenu-menu-header,
+.megamenu-menu-list li:not(.saved) a {
+  transition: all .4s;
+}
+
+.megamenu-menu-header {
+  border-bottom: 1px solid #16161a;
+}
+
+.megamenu-menu-header:hover {
+  background: #161819;
+}
+
+.megamenu-menu-list li:not(.saved) a:not(.active):hover,
+.megamenu-menu-list li a.active {
+  background: #101010 !important;
+}
+
+#m-saved {
+  background: inherit;
+  color: inherit;
+}
+
+#megamenu-menu-list {
+  margin: 0;
+}
+
+.theme-preview-div {
+  transition: all .4s;
+}
+
+.theme-preview-div:hover {
+  border: 4px solid #be2f34;
+}
+
+.theme-preview-div.active, .theme-preview-div.active:hover {
+  border: 4px solid #db4d52;
+}
+
+.theme-preview-div.active i {
+  color: #db4d52;
+}
+
+.ty-preferences .window {
+  background: #fbfbfb;
+}
+
+.ty-preferences .nav-group-item {
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+}
+
+.ty-preferences .nav-group-item:not(.active):hover {
+  background: #eee;
+  color: inherit;
+}
+
+.ty-preferences .nav-group-item:active, .ty-preferences .nav-group-item.active {
+  background: #ddd;
+  color: inherit;
+}
+
+.ty-preferences .btn-default {
+  background: transparent;
+  color: inherit;
+  border-color: #9292928f;
+  cursor: pointer;
+}
+
+.ty-preferences .btn-default:hover {
+  border-color: #db4d52;
+  background: #eee !important;
+  color: inherit;
+}
+
+.ty-preferences .btn-default:active, .ty-preferences .btn-default.active {
+  background: #ddd;
+}
+
+.ty-preferences select,
+.ty-preferences ul.dropdown-menu {
+  border-color: #9292928f;
+  background: #fbfbfb;
+}
+
+.ty-preferences ul.dropdown-menu li {
+  background: #fbfbfb;
+}
+
+.ty-preferences ul.dropdown-menu li:hover {
+  background: #eee;
+}
+
+.cm-s-typora-default .cm-s-inner.CodeMirror-line {
+  border: 0 !important;
+}
+
+#write > p:first-child:empty {
+  position: static;
+}
+
+#write > p:only-child:empty::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("file:///C://Users//ASUS//AppData//Roaming//Typora/themes/ursine/night.png") no-repeat 45% 90% transparent;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+@media print {
+  #write ol > li,
+  #write ul > li {
+    color: #333;
+  }
+  #write ol > li, #write ul > li {
+    color: #333;
+  }
+  #write ol > li > strong > *, #write ol > li > b > *, #write ul > li > strong > *, #write ul > li > b > * {
+    font-weight: bold;
+  }
+}
+
+/* CodeMirror 3024 Day theme */
+.cm-s-inner {
+  padding: .25rem;
+  border: 1px solid #0000001a !important;
+  border-radius: .25rem;
+}
+
+.cm-s-inner.CodeMirror, .cm-s-inner .CodeMirror-gutters {
+  background-color: #fafafa !important;
+  color: #3a3432 !important;
+  border: none;
+}
+
+.cm-s-inner .CodeMirror-gutters {
+  width: 5ch;
+  color: #6d8a88;
+}
+
+.cm-s-inner .CodeMirror-cursor {
+  border-left: solid thin #5c5855 !important;
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+  width: 4ch !important;
+  color: #807d7c;
+}
+
+.cm-s-inner .CodeMirror-line::selection, .cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line > span::selection,
+.cm-s-inner .CodeMirror-line > span::-moz-selection,
+.cm-s-inner .CodeMirror-line > span > span::selection,
+.cm-s-inner .CodeMirror-line > span > span::-moz-selection {
+  background: #d6d5d4;
+}
+
+.cm-s-inner span.cm-comment {
+  color: #cdab53;
+}
+
+.cm-s-inner span.cm-string, .cm-s-inner span.cm-string-2 {
+  color: #f2b01d;
+}
+
+.cm-s-inner span.cm-number {
+  color: #a16a94;
+}
+
+.cm-s-inner span.cm-variable {
+  color: #01a252;
+}
+
+.cm-s-inner span.cm-variable-2 {
+  color: #01a0e4;
+}
+
+.cm-s-inner span.cm-def {
+  color: #e8bbd0;
+}
+
+.cm-s-inner span.cm-operator {
+  color: #ff79c6;
+}
+
+.cm-s-inner span.cm-keyword {
+  color: #db2d20;
+}
+
+.cm-s-inner span.cm-atom {
+  color: #a16a94;
+}
+
+.cm-s-inner span.cm-meta {
+  color: inherit;
+}
+
+.cm-s-inner span.cm-tag {
+  color: #db2d20;
+}
+
+.cm-s-inner span.cm-attribute {
+  color: #01a252;
+}
+
+.cm-s-inner span.cm-qualifier {
+  color: #50fa7b;
+}
+
+.cm-s-inner span.cm-property {
+  color: #01a252;
+}
+
+.cm-s-inner span.cm-builtin {
+  color: #50fa7b;
+}
+
+.cm-s-inner span.cm-variable-3, .cm-s-inner span.cm-type {
+  color: #ffb86c;
+}
+
+.cm-s-inner span.cm-bracket {
+  color: #3a3432;
+}
+
+.cm-s-inner span.cm-link {
+  color: #a16a94;
+}
+
+.cm-s-inner span.cm-error {
+  background: #db2d20;
+  color: #5c5855;
+}
+
+.md-fences.md-focus .cm-s-inner .CodeMirror-activeline-background {
+  background: #e8f2ff;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: #a16a94 !important;
+}
+
+.cm-s-inner .CodeMirror-selected, .cm-s-inner .CodeMirror-selectedtext {
+  background: #d5e2f4 !important;
+  color: inherit;
+  text-shadow: none;
+}
+
+#fences-auto-suggest .active {
+  background: #ddd;
+}
+
+#write .code-tooltip {
+  bottom: initial;
+  top: calc(100% - 1px);
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-top: 0;
+}
+
+.auto-suggest-container {
+  border-color: #b4b4b4;
+}
+
+.auto-suggest-container .autoComplt-hint.active {
+  background: #b4b4b4;
+  color: inherit;
+}
+
+table tr:nth-child(2n) {
+  background: #e6e6e6;
+}
+
+sup.md-footnote {
+  background: #ddd;
+}
+
+#typora-sidebar * {
+  color: #f0f0f0;
+}
+
+#typora-sidebar * .file-tree-rename-input {
+  color: #333;
+}
+
+#typora-sidebar * code {
+  background: #0000001a;
+  border-color: #ffffff26;
+}
+
+#typora-quick-open * {
+  color: #f0f0f0;
+}
+
+#typora-quick-open input {
+  color: #333;
+}
+
+#megamenu-menu-sidebar {
+  color: #f0f0f0 !important;
+}
+
+.megamenu-menu-list li:not(.saved) a:not(.active):hover,
+.megamenu-menu-list li a.active {
+  color: #f0f0f0 !important;
+}
+
+#write > p:first-child:not(:only-child)::before, #write > p:only-child::before {
+  background: url("file:///C://Users//ASUS//AppData//Roaming//Typora/themes/ursine/day.png") no-repeat 55% 90% transparent;
+  background-size: cover;
+}
+
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><a name="java基于nettyzookeeper实现的rpc框架" class="md-header-anchor"></a><span>Java基于Netty/Zookeeper实现的RPC框架</span></h1><blockquote><p><span>基于Spring Boot Starter的小型RPC框架。编写这个RPC框架并不是为了重复造轮子，而是出于学习的目的，通过手写一款RPC框架来达到知识的学习和应用目的。简易的</span><code>RPC</code><span>框架(</span><code>danran-rpc</code><span>)，底层使用</span><code>Netty</code><span>进行网络通信，使用</span><code>Zookeeper</code><span>为注册中心。该项目可以Maven打包直接加入其他项目运行。另外一个仓库：</span></p><ul><li><code>https://gitee.com/lengdanran/danran-rpc-debug</code></li><li><code>https://github.com/lengdanran/danran-rpc-debug</code></li></ul><p><span>为该项目的整合调试仓库，在里面可调试</span><code>danran-rpc</code><span>的源码</span></p></blockquote><h2><a name="快速上手" class="md-header-anchor"></a><span>快速上手</span></h2><blockquote><p><span>示例代码：</span><a href='https://gitee.com/lengdanran/danran-rpc-example' target='_blank' class='url'>https://gitee.com/lengdanran/danran-rpc-example</a></p></blockquote><ul><li><code>https://gitee.com/lengdanran/danran-rpc.git</code></li><li><code>https://github.com/lengdanran/danran-rpc.git</code></li></ul><h3><a name="生成本地maven依赖包" class="md-header-anchor"></a><span>生成本地Maven依赖包</span></h3><p><span>从以上的git仓库地址clone代码到本地，然后进入到项目pom目录中，执行maven安装命令：</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="shell"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="shell"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 8.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">mvn clean install</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><h3><a name="服务提供者-消费者同时引入该maven依赖" class="md-header-anchor"></a><span>服务提供者-消费者同时引入该maven依赖</span></h3><p><span>引入打包安装好的maven依赖，因为该RPC框架内部使用了和Springboot本身冲突的日志框架，引入依赖时，最好将</span><code>danran-rpc</code><span>的日志依赖移除，避免程序无法启动。</span></p><p><img src="README.assets/image-20210825164608428.png" referrerpolicy="no-referrer" alt="image-20210825164608428"></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="xml" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="xml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 8.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">dependency</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">groupId</span><span class="cm-tag cm-bracket">&gt;</span>danran.rpc<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">groupId</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">artifactId</span><span class="cm-tag cm-bracket">&gt;</span>danran-rpc-spring-boot-starter<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">artifactId</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">version</span><span class="cm-tag cm-bracket">&gt;</span>1.0.1<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">version</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">&lt;!--排除日志冲突--&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">exclusions</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">exclusion</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">groupId</span><span class="cm-tag cm-bracket">&gt;</span>log4j<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">groupId</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">artifactId</span><span class="cm-tag cm-bracket">&gt;</span>log4j<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">artifactId</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">exclusion</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">exclusion</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">groupId</span><span class="cm-tag cm-bracket">&gt;</span>org.slf4j<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">groupId</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">artifactId</span><span class="cm-tag cm-bracket">&gt;</span>slf4j-log4j12<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">artifactId</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">exclusion</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">exclusions</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">dependency</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 358px;"></div><div class="CodeMirror-gutters" style="display: none; height: 358px;"></div></div></div></pre><h3><a name="服务提供者消费者同时配置注册中心请更换为自己的zk地址" class="md-header-anchor"></a><span>服务提供者、消费者同时配置注册中心(请更换为自己的ZK地址)</span></h3><p><span>在项目的</span><code>application.properties</code><span>添加如下配置</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="properties"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="properties"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 8.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">danran.rpc.register-address</span>=<span class="cm-quote">121.4.195.203</span>:<span class="cm-quote">2181 # zk的地址</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">danran.rpc.protocol</span>=<span class="cm-quote">danran</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">danran.rpc.server-port</span>=<span class="cm-quote">6666</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 67px;"></div><div class="CodeMirror-gutters" style="display: none; height: 67px;"></div></div></div></pre><h3><a name="服务提供者使用示例" class="md-header-anchor"></a><span>服务提供者使用示例</span></h3><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 8.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">package</span> <span class="cm-def">provider</span>.<span class="cm-variable">service</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">common</span>.<span class="cm-variable">api</span>.<span class="cm-variable">BookService</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">common</span>.<span class="cm-variable">entity</span>.<span class="cm-variable">Book</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">danran</span>.<span class="cm-variable">rpc</span>.<span class="cm-variable">annotation</span>.<span class="cm-variable">RPCService</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">org</span>.<span class="cm-variable">springframework</span>.<span class="cm-variable">beans</span>.<span class="cm-variable">factory</span>.<span class="cm-variable">annotation</span>.<span class="cm-variable">Autowired</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">provider</span>.<span class="cm-variable">mapper</span>.<span class="cm-variable">BookMapper</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">java</span>.<span class="cm-variable">util</span>.<span class="cm-variable">List</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/**</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* @Classname BookServiceImpl</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* @Description TODO</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* @Date 2021/8/24 15:50</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* @Created by ASUS</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*/</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@RPCService</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">BookServiceImpl</span> <span class="cm-keyword">implements</span> <span class="cm-variable">BookService</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Autowired</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">BookMapper</span> <span class="cm-variable">bookMapper</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">/**</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* @return 所有的书籍信息</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">*/</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Override</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable">List</span><span class="cm-operator">&lt;</span><span class="cm-variable">Book</span><span class="cm-operator">&gt;</span> <span class="cm-variable">getAllBooks</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">bookMapper</span>.<span class="cm-variable">getAllBooks</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 672px;"></div><div class="CodeMirror-gutters" style="display: none; height: 672px;"></div></div></div></pre><p><span>在具体的服务实现类上添加</span><code>@RPCService</code><span>注解，即可将该类作为服务提供者注册到</span><code>zookeeper</code><span>中，消费端可以发现该服务，添加该注解之后，将会作为Spring的Component注入到Spring的容器中。（不再需要添加@Component注解）</span></p><h3><a name="服务消费者示例" class="md-header-anchor"></a><span>服务消费者示例</span></h3><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 8.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">package</span> <span class="cm-def">consumer</span>.<span class="cm-variable">controller</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">common</span>.<span class="cm-variable">api</span>.<span class="cm-variable">BookService</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">common</span>.<span class="cm-variable">entity</span>.<span class="cm-variable">Book</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">danran</span>.<span class="cm-variable">rpc</span>.<span class="cm-variable">annotation</span>.<span class="cm-variable">InjectService</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">org</span>.<span class="cm-variable">springframework</span>.<span class="cm-variable">web</span>.<span class="cm-variable">bind</span>.<span class="cm-variable">annotation</span>.<span class="cm-variable">GetMapping</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">org</span>.<span class="cm-variable">springframework</span>.<span class="cm-variable">web</span>.<span class="cm-variable">bind</span>.<span class="cm-variable">annotation</span>.<span class="cm-variable">RequestMapping</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">org</span>.<span class="cm-variable">springframework</span>.<span class="cm-variable">web</span>.<span class="cm-variable">bind</span>.<span class="cm-variable">annotation</span>.<span class="cm-variable">RestController</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">java</span>.<span class="cm-variable">util</span>.<span class="cm-variable">List</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/**</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* @Classname ConsumerController</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* @Description TODO</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* @Date 2021/8/24 19:04</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* @Created by ASUS</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*/</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@RestController</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@RequestMapping</span>(<span class="cm-string">"/consumer"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">ConsumerController</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@InjectService</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">BookService</span> <span class="cm-variable">bookService</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@GetMapping</span>(<span class="cm-string">"/get_all_books"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable">List</span><span class="cm-operator">&lt;</span><span class="cm-variable">Book</span><span class="cm-operator">&gt;</span> <span class="cm-variable">getAllBooks</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">bookService</span>.<span class="cm-variable">getAllBooks</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 650px;"></div><div class="CodeMirror-gutters" style="display: none; height: 650px;"></div></div></div></pre><p><span>使用</span><code>@InjectService</code><span>注解，可以启动服务发现，然后自动注入远程服务的代理对象。</span></p><h3><a name="示例运行结果" class="md-header-anchor"></a><span>示例运行结果</span></h3><p><span>启动两个Springboot的web服务，provider提供查询数据库的具体实现，consumer远程调用该服务。</span></p><ul><li><span>provider启动日志</span></li></ul><p><img src="README.assets/image-20210825170245344.png" referrerpolicy="no-referrer" alt="image-20210825170245344"></p><ul><li><span>consumer启动日志</span></li></ul><p><img src="README.assets/image-20210825170326280.png" referrerpolicy="no-referrer" alt="image-20210825170326280"></p><p><span>启动postman接口调试工具，访问服务接口：</span></p><p><img src="README.assets/image-20210825170458230.png" referrerpolicy="no-referrer" alt="image-20210825170458230"></p><p><span>接口成功返回数据，查看程序日志：</span></p><p><img src="README.assets/image-20210825170650979.png" referrerpolicy="no-referrer" alt="image-20210825170650979"></p><p><img src="README.assets/image-20210825171009200.png" referrerpolicy="no-referrer" alt="image-20210825171009200"></p><h2><a name="rpc原理" class="md-header-anchor"></a><span>RPC原理</span></h2><h3><a name="定义" class="md-header-anchor"></a><span>定义</span></h3><p><span>RPC(Remote procedure call)远程过程调用，简单理解是本地需要某个服务，而具体的服务由另外一个独立的服务端提供，我们可以通过网络等其他方式通知到服务端执行对应的服务，然后返回我们关心的信息。</span></p><blockquote><p><span>RPC:打电话查成绩</span></p><p><span>本地：你</span></p><p><span>远端服务：你孩子的班主任</span></p><p><span>现在你想了解孩子的期末考试成绩，而成绩在班主任那里，此时你便打电话给班主任，然后班主任查询，告诉你孩子的成绩是多少，这就是一个RPC过程。</span></p></blockquote><p><img src="README.assets/image-20210825180349115.png" referrerpolicy="no-referrer" alt="image-20210825180349115"></p><p><span>电脑1想要调用电脑2中的某个服务，会发出一个RPC call给通信中间件，通信中间件将请求编组后通过网络将请求发送到电脑2端的通信中间件，通信中间件从网络中读取请求数据包，解组，然后在电脑2内部发起本地调用，调用结束之后，会得到一个返回数据，通信中间件再将响应数据编组通过网络发送到电脑1。</span></p><blockquote><p><span>此时会有一个问题：电脑1（消费端）如何知道远程服务的地址?</span></p></blockquote><h3><a name="服务发现" class="md-header-anchor"></a><span>服务发现</span></h3><p><span>解决这个问题，可以采用第三方，即是这个人专门来管理服务，一旦有服务请求来，就告诉对方你所请求的服务的地址有哪些。</span></p><p><span>因此，目前比较流行的RPC框架Dubbo采用的是如下的架构：</span></p><p><img src="README.assets/image-20210825182357641.png" referrerpolicy="no-referrer" alt="image-20210825182357641"></p><p><span>主要有消费者，注册中心，提供者三方架构角色，消费者通过注册中心去订阅自己关心的服务，注册中心会将注册了的服务地址等相关信息返回给消费者，消费者再通过具体的协议将数据发送到socket中最后由网卡发送到网络上，最后得到服务提供者的响应数据。</span></p><h2><a name="danran-rpc实现" class="md-header-anchor"></a><span>danran-rpc实现</span></h2><h3><a name="文件结构" class="md-header-anchor"></a><span>文件结构</span></h3><p><img src="README.assets/image-20210825183436551.png" referrerpolicy="no-referrer" alt="image-20210825183436551"></p><ul><li><span>annotation：里面为InjectService和RPCService两个注解的定义，用来注入和发布服务</span></li><li><span>client：为客户端服务发现、服务代理以及网络通信的实现</span></li><li><span>common：框架的公共模块，包含协议、序列化以及公用Entity的定义</span></li><li><span>config：Spring容器启动时的自动配置类</span></li><li><span>properties：用户自定义参数</span></li><li><span>server：rpc服务的注册、发布与启动</span></li></ul><h3><a name="实现组件" class="md-header-anchor"></a><span>实现组件</span></h3><p><span>danran-rpc的实现是参照着dubbo实现的，主要采用了如下几个组件：</span></p><ul><li><span>网络通信——Netty</span></li><li><span>注册中心——Zookeeper（后续应该会继续实现不同的注册中心：Redis、Nacos、Eureka等）</span></li><li><span>代理——Java动态代理</span></li><li><span>IOC——Spring</span></li></ul><h3><a name="整体架构" class="md-header-anchor"></a><span>整体架构</span></h3><p><img src="README.assets/image-20210826141753089.png" referrerpolicy="no-referrer" alt="image-20210826141753089"></p><h3><a name="启动流程" class="md-header-anchor"></a><span>启动流程</span></h3><p><img src="README.assets/image-20210826150515973.png" referrerpolicy="no-referrer" alt="image-20210826150515973"></p><p>&nbsp;</p><h3><a name="client包实现" class="md-header-anchor"></a><span>Client包实现</span></h3><p><span>依据RPC的原理，客户端需要将请求通过网络通信中间件将数据编组发送出去并得到对应的响应数据。</span></p><h4><a name="netclient" class="md-header-anchor"></a><span>NetClient</span></h4><p><span>该接口定义了网络请求客户端，定义网络的请求规范，可以由不同的网络通信框架来实现，用户可以自定义实现类，可以整合到danran-rpc框架中。这里采用Netty实现。</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 8.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-variable-3">byte</span>[] <span class="cm-def">sendRequest</span>(<span class="cm-variable-3">byte</span>[] <span class="cm-variable">data</span>, <span class="cm-variable">Service</span> <span class="cm-variable">service</span>) <span class="cm-keyword">throws</span> <span class="cm-variable">InterruptedException</span> {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">String</span>[] <span class="cm-variable">ip_port</span> <span class="cm-operator">=</span> <span class="cm-variable">service</span>.<span class="cm-variable">getAddress</span>().<span class="cm-variable">split</span>(<span class="cm-string">":"</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">String</span> <span class="cm-variable">ip</span> <span class="cm-operator">=</span> <span class="cm-variable">ip_port</span>[<span class="cm-number">0</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">port</span> <span class="cm-operator">=</span> <span class="cm-variable-3">Integer</span>.<span class="cm-variable">parseInt</span>(<span class="cm-variable">ip_port</span>[<span class="cm-number">1</span>]);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">SendHandler</span> <span class="cm-variable">sendHandler</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">SendHandler</span>(<span class="cm-variable">data</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">byte</span>[] <span class="cm-variable">rsp</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 配置客户端</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">EventLoopGroup</span> <span class="cm-variable">group</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">NioEventLoopGroup</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">try</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">Bootstrap</span> <span class="cm-variable">bootstrap</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Bootstrap</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 初始化通道</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">bootstrap</span>.<span class="cm-variable">group</span>(<span class="cm-variable">group</span>).<span class="cm-variable">channel</span>(<span class="cm-variable">NioSocketChannel</span>.<span class="cm-keyword">class</span>).<span class="cm-variable">option</span>(<span class="cm-variable">ChannelOption</span>.<span class="cm-variable">TCP_NODELAY</span>, <span class="cm-atom">true</span>).<span class="cm-variable">handler</span>(<span class="cm-keyword">new</span> <span class="cm-variable">ChannelInitializer</span><span class="cm-operator">&lt;</span><span class="cm-variable">SocketChannel</span><span class="cm-operator">&gt;</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-meta">@Override</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable-3">void</span> <span class="cm-variable">initChannel</span>(<span class="cm-variable">SocketChannel</span> <span class="cm-variable">ch</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">ChannelPipeline</span> <span class="cm-variable">pipeline</span> <span class="cm-operator">=</span> <span class="cm-variable">ch</span>.<span class="cm-variable">pipeline</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">pipeline</span>.<span class="cm-variable">addLast</span>(<span class="cm-variable">sendHandler</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  });</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 启动连接</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">bootstrap</span>.<span class="cm-variable">connect</span>(<span class="cm-variable">ip</span>, <span class="cm-variable">port</span>).<span class="cm-variable">sync</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">rsp</span> <span class="cm-operator">=</span> (<span class="cm-variable-3">byte</span>[]) <span class="cm-variable">sendHandler</span>.<span class="cm-variable">rspData</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">logger</span>.<span class="cm-variable">info</span>(<span class="cm-string">"Send Request and get the response: {}"</span>, <span class="cm-variable">rsp</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  } <span class="cm-keyword">finally</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 释放线程组资源</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">group</span>.<span class="cm-variable">shutdownGracefully</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">rsp</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 717px;"></div><div class="CodeMirror-gutters" style="display: none; height: 717px;"></div></div></div></pre><h4><a name="clientproxyfactory" class="md-header-anchor"></a><span>ClientProxyFactory</span></h4><p><span>这是客户端代理工厂， 用于创建远程服务的代理类，同时封装了请求和响应数据的编组合解组操作。该工厂类包含了服务发现实例对象以及具体的网络层实现，可以同服务发现实例去发现服务以及发送数据。里面的</span><code>getProxy(Class&lt;T&gt; clazz)</code><span>方法会返回clazz的代理对象。核心代码为：</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 8.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">return</span> (<span class="cm-variable">T</span>) <span class="cm-keyword">this</span>.<span class="cm-variable">objectCache</span>.<span class="cm-variable">computeIfAbsent</span>(</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">clazz</span>, </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">cls</span> <span class="cm-operator">-&gt;</span> <span class="cm-variable">newProxyInstance</span>(</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">cls</span>.<span class="cm-variable">getClassLoader</span>(), </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">new</span> <span class="cm-variable">Class</span><span class="cm-operator">&lt;?&gt;</span>[]{<span class="cm-variable">cls</span>}, </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">new</span> <span class="cm-variable">ClientInvocationHandler</span>(<span class="cm-variable">cls</span>)));</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 134px;"></div><div class="CodeMirror-gutters" style="display: none; height: 134px;"></div></div></div></pre><p><span>该段代码会以该clazz的Class来构建一个代理对象，具体的代理实现为</span><code>ClientInvocationHandler</code><span>.利用的是JDK的动态代理，实现了InvocationHandler接口。</span></p><p><span>其中关键为</span><code>invoke()</code><span>方法的实现。通过反射的方式调用被代理对象的方法。</span></p><p><span>首先它会先通过被代理对象clazz获得被代理对象的全类名，服务发现实例会以获得的全类名去服务注册中心去发现与之对应的远程服务。</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 8.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">List</span><span class="cm-operator">&lt;</span><span class="cm-variable">Service</span><span class="cm-operator">&gt;</span> <span class="cm-variable">services</span> <span class="cm-operator">=</span> <span class="cm-variable">serviceDiscovery</span>.<span class="cm-variable">getServices</span>(<span class="cm-variable">serviceName</span>);</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><p><code>Service</code><span>中包含了远程服务的名称、服务协议以及服务地址（ip+端口）获得具体远程服务之后，会生成一个</span><code>RequestWrap</code><span>请求包装类，会将服务名称，被代理的方法名称，被代理方法的参数类型以及被代理方法的参数封装起来。之后便会根据协议去编组该封装请求得到data，最后通过网络层</span><code>NetClient</code><span>实现请求发送。最后会从网络层实现那里获取得到响应数据，解组响应得到</span><code>ResponseWrap</code><span>，从响应封装中得到具体的响应数据。</span></p><h4><a name="服务发现------servicediscovery" class="md-header-anchor"></a><span>服务发现——ServiceDiscovery</span></h4><p><span>服务发现会从注册中心查询得到远程服务注册的信息，然后返回，在danran-rpc中，目前是以Zookeeper为注册中心实现的，故具体的实现类为</span><code>ZkDiscovery</code><span>.以下是服务发现具体实现流程：</span></p><blockquote><p><span>服务发现的依据和服务注册的依据是完全一致的，确保注册了的服务一定会被发现。</span></p></blockquote><ul><li><span>根据提供的服务名称(默认是全类名)拼接znode路径</span></li><li><span>从Zookeeper中获得该路径下的所有子节点的名称（子节点的名称即为具体远程服务信息的JSON字符串按照URLEncode之后的字符串）</span></li><li><span>根据拿到的服务提供信息解码得到服务提供者并返回</span></li></ul><h3><a name="server包实现" class="md-header-anchor"></a><span>Server包实现</span></h3><p><span>该包是对RPC服务注册与服务注入的实现包，内部包括了注册模块</span><code>register</code><span>和服务启动模块。</span></p><h4><a name="register模块" class="md-header-anchor"></a><span>register模块</span></h4><p><span>该模块提供了一个</span><code>ServiceRegister</code><span>的顶部接口，用于定义服务注册的规范，用户可以实现该接口，自定义注册规范与逻辑，danran-rpc具体的实现类为</span><code>ZookeeperExportServiceRegister</code><span>,提供Zookeeper注册中心实现。</span></p><h5><a name="zookeeperexportserviceregister" class="md-header-anchor"></a><span> ZookeeperExportServiceRegister</span></h5><p><span>该类（后续简称ZESR）实现注册接口</span><code>ServiceRegister</code><span>,提供Zookeeper注册实现。</span></p><p><span>ZESR会根据用户提供的Zookeeper的地址，开启一个zkClient。</span></p><p><strong><span>服务注册——register()</span></strong></p><ul><li><span>获取服务提供者的host地址</span></li><li><span>用户提供服务端口port，在port向外暴露服务</span></li><li><span>封装服务包装类</span><code>Service</code></li><li><span>调用服务暴露</span><code>exportService()</code></li></ul><p><strong><span>服务暴露——exportService()</span></strong></p><ul><li><span>从Service中获取到服务名称（服务实现接口的全类名）</span></li><li><span>服务地址拼接（和服务发现的逻辑一致）</span></li><li><span>具体的服务（包含服务提供者的服务地址，以及服务实现接口）</span></li></ul><blockquote><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="json"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="json"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 8.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-string cm-property">"address"</span>:<span class="cm-string">"192.168.25.1:6666"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"name"</span>:<span class="cm-string">"common.api.BookService"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"protocol"</span>:<span class="cm-string">"danran"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 113px;"></div><div class="CodeMirror-gutters" style="display: none; height: 113px;"></div></div></div></pre></blockquote><ul><li><span>向Zookeeper注册服务——创建节点</span></li></ul><pre lang="java" class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 8.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/***</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* 服务暴露</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* @param service 需要暴露的服务</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*/</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">private</span> <span class="cm-variable-3">void</span> <span class="cm-def">exportService</span>(<span class="cm-variable">Service</span> <span class="cm-variable">service</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">String</span> <span class="cm-variable">serviceName</span> <span class="cm-operator">=</span> <span class="cm-variable">service</span>.<span class="cm-variable">getName</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">String</span> <span class="cm-variable">uri</span> <span class="cm-operator">=</span> <span class="cm-variable">JSON</span>.<span class="cm-variable">toJSONString</span>(<span class="cm-variable">service</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">try</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">uri</span> <span class="cm-operator">=</span> <span class="cm-variable">URLEncoder</span>.<span class="cm-variable">encode</span>(<span class="cm-variable">uri</span>, <span class="cm-string">"UTF-8"</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  } <span class="cm-keyword">catch</span> (<span class="cm-variable">UnsupportedEncodingException</span> <span class="cm-variable">e</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">e</span>.<span class="cm-variable">printStackTrace</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 抽象的服务定位节点</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">String</span> <span class="cm-variable">servicePath</span> <span class="cm-operator">=</span> <span class="cm-string">"/rpc/"</span> <span class="cm-operator">+</span> <span class="cm-variable">serviceName</span> <span class="cm-operator">+</span> <span class="cm-string">"/service"</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">logger</span>.<span class="cm-variable">info</span>(<span class="cm-string">"抽象服务["</span> <span class="cm-operator">+</span> <span class="cm-variable">serviceName</span> <span class="cm-operator">+</span> <span class="cm-string">"]注册地址 == "</span> <span class="cm-operator">+</span> <span class="cm-variable">servicePath</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-operator">!</span><span class="cm-variable">zkClient</span>.<span class="cm-variable">exists</span>(<span class="cm-variable">servicePath</span>)) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">zkClient</span>.<span class="cm-variable">createPersistent</span>(<span class="cm-variable">servicePath</span>, <span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 具体的服务实例地址</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">String</span> <span class="cm-variable">uriPath</span> <span class="cm-operator">=</span> <span class="cm-variable">servicePath</span> <span class="cm-operator">+</span> <span class="cm-string">"/"</span> <span class="cm-operator">+</span> <span class="cm-variable">uri</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">logger</span>.<span class="cm-variable">info</span>(<span class="cm-string">"具体服务实例注册节点 == "</span> <span class="cm-operator">+</span> <span class="cm-variable">uriPath</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">zkClient</span>.<span class="cm-variable">exists</span>(<span class="cm-variable">uriPath</span>)) <span class="cm-variable">zkClient</span>.<span class="cm-variable">delete</span>(<span class="cm-variable">uriPath</span>);<span class="cm-comment">// 如果存在，删除更新</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">zkClient</span>.<span class="cm-variable">createEphemeral</span>(<span class="cm-variable">uriPath</span>);<span class="cm-comment">// 创建一个短暂的节点</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 627px;"></div><div class="CodeMirror-gutters" style="display: none; height: 627px;"></div></div></div></pre><h4><a name="rpc处理者------defaultrpcprocessor" class="md-header-anchor"></a><span>RPC处理者——DefaultRpcProcessor</span></h4><p><span>该类定义了RPC服务启动的具体流程，实现Spring的ApplicationListener，支持服务启动暴露，自动注入Service。</span></p><p><span>内部含有三个成员：</span></p><p><img src="README.assets/image-20210826111416550.png" referrerpolicy="no-referrer" alt="image-20210826111416550"></p><p><span>该类主要做两件事情：</span></p><ul><li><span>把用户用</span><code>@RPCService</code><span>标记的服务发布</span></li><li><span>将用户用</span><code>@InjectService</code><span>标记的服务注入</span></li></ul><p><span>这里使用了Spring提供的IOC容器，从容器中获取bean进行操作。</span></p><h5><a name="rpc服务启动" class="md-header-anchor"></a><span>RPC服务启动</span></h5><ol><li><span>从Spring容器中取出所有用</span><code>@RPCService</code><span>标记的bean</span></li><li><span>遍历得到的bean列表，每一个bean是实际服务的提供类对象实例</span></li><li><span>获得bean的Class对象clazz，并通过clazz去获得他实现的接口（和客户端的接口是一致的，以此来关联起来客户端和服务端）</span></li><li><span>以父类（接口），实际的服务提供者包装，然后调用服务注册模块，注册到Zookeeper中</span></li><li><span>启动RPC服务实现</span></li></ol><p><img src="README.assets/image-20210826125935419.png" referrerpolicy="no-referrer" alt="image-20210826125935419"></p><h5><a name="服务注入" class="md-header-anchor"></a><span>服务注入</span></h5><p><span>将用户用</span><code>@InjectService</code><span>标记的服务注入。</span></p><p><span>同样使用Spring的容器，得到容器中的bean，然后判断每个bean是否有需要注入的服务，一旦发现有需要注入的属性，通过反射的方式，将属性注入为代理对象，一旦客户端发起服务调用，便会触发代理对象的invoke()方法，执行代理执行，得到需要的返回数据。</span></p><p><img src="README.assets/image-20210826130707631.png" referrerpolicy="no-referrer" alt="image-20210826130707631"></p><p>&nbsp;</p></div>
+</body>
+</html>

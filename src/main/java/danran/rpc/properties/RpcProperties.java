@@ -14,13 +14,19 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 @EnableConfigurationProperties(RpcProperties.class)
 @ConfigurationProperties(prefix = "danran.rpc")
 public class RpcProperties {
+
+    /**
+     * 服务注册类型，默认为zookeeper
+     */
+    private String registerType = "zookeeper";
+
     /**
      * 服务注册中心
      */
     private String registerAddress = "127.0.0.1:2181";
 
     /**
-     * 服务端暴露端口
+     * 服务端对外暴露端口
      */
     private Integer serverPort = 6666;
 
@@ -51,5 +57,13 @@ public class RpcProperties {
 
     public void setProtocol(String protocol) {
         this.protocol = protocol;
+    }
+
+    public String getRegisterType() {
+        return registerType;
+    }
+
+    public void setRegisterType(String registerType) {
+        this.registerType = registerType;
     }
 }
