@@ -1,6 +1,7 @@
-package danran.rpc.client.discovery;
+package danran.rpc.client.discovery.zkdis;
 
 import com.alibaba.fastjson.JSON;
+import danran.rpc.client.discovery.ServiceDiscovery;
 import danran.rpc.common.serializer.ZookeeperSerializer;
 import danran.rpc.common.service.Service;
 import org.I0Itec.zkclient.ZkClient;

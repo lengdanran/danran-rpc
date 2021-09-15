@@ -1,8 +1,10 @@
 package danran.rpc.config;
 
 import danran.rpc.client.ClientProxyFactory;
-import danran.rpc.client.discovery.ZkDiscovery;
+import danran.rpc.client.discovery.redisdis.RedisDiscovery;
+import danran.rpc.client.discovery.zkdis.ZkDiscovery;
 import danran.rpc.client.net.NettyNetClient;
+import danran.rpc.common.constant.RegisterType;
 import danran.rpc.common.protocol.JavaSerializeMessageProtocol;
 import danran.rpc.common.protocol.MessageProtocol;
 import danran.rpc.properties.RpcProperties;
@@ -10,6 +12,7 @@ import danran.rpc.server.NettyRpcServer;
 import danran.rpc.server.RequestHandler;
 import danran.rpc.server.RpcServer;
 import danran.rpc.server.register.DefaultRpcProcessor;
+import danran.rpc.server.register.RedisExportServiceRegister;
 import danran.rpc.server.register.ServiceRegister;
 import danran.rpc.server.register.ZookeeperExportServiceRegister;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +24,12 @@ import java.util.Map;
 
 /**
  * <p>
- *  Spring boot 自动配置类
+ * Spring boot 自动配置类
  *
  * @Classname AutoConfiguration
  * @Description TODO
  * @Date 2021/8/23 19:47
  * @Created by ASUS
- *
  */
 @Configuration
 public class AutoConfiguration {
@@ -46,7 +48,18 @@ public class AutoConfiguration {
     public ClientProxyFactory clientProxyFactory(@Autowired RpcProperties rpcProperties) {
         ClientProxyFactory clientProxyFactory = new ClientProxyFactory();
         // 设置服务发现者
-        clientProxyFactory.setServiceDiscovery(new ZkDiscovery(rpcProperties.getRegisterAddress()));
+        String registerType = rpcProperties.getRegisterType();
+        switch (registerType) {
+            case RegisterType.REDIS: {
+                clientProxyFactory.setServiceDiscovery(new RedisDiscovery(rpcProperties.getRegisterAddress()));
+                break;
+            }
+            case RegisterType.ZOOKEEPER: {
+                clientProxyFactory.setServiceDiscovery(new ZkDiscovery(rpcProperties.getRegisterAddress()));
+                break;
+            }
+        }
+
         // 设置支持的协议
         Map<String, MessageProtocol> supportedProtocols = new HashMap<>();
         supportedProtocols.put(rpcProperties.getProtocol(), new JavaSerializeMessageProtocol());
@@ -58,12 +71,32 @@ public class AutoConfiguration {
 
     @Bean
     public ServiceRegister serviceRegister(@Autowired RpcProperties rpcProperties) {
-        return new ZookeeperExportServiceRegister(
-                rpcProperties.getRegisterAddress(),
-                rpcProperties.getServerPort(),
-                rpcProperties.getProtocol()
-        );
+        String registerType = rpcProperties.getRegisterType();
+        switch (registerType) {
+            case RegisterType.REDIS: {
+                return new RedisExportServiceRegister(
+                        rpcProperties.getRegisterAddress(),
+                        rpcProperties.getServerPort(),
+                        rpcProperties.getProtocol()
+                );
+            }
+            case RegisterType.ZOOKEEPER: {
+                return new ZookeeperExportServiceRegister(
+                        rpcProperties.getRegisterAddress(),
+                        rpcProperties.getServerPort(),
+                        rpcProperties.getProtocol()
+                );
+            }
+            default: {
+                return new ZookeeperExportServiceRegister(
+                        rpcProperties.getRegisterAddress(),
+                        rpcProperties.getServerPort(),
+                        rpcProperties.getProtocol()
+                );
+            }
+        }
     }
+
 
     @Bean
     public RequestHandler requestHandler(@Autowired ServiceRegister serviceRegister) {
